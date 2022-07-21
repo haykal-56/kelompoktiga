@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../../images/monster.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Contoh Switch Case</title>
+  </head>
+<style>
+*{
+font-family: 'Roboto', sans-serif;
+}
+
+body{
+  background-color: #D8FFDD;
+}
+
+#berubah {
+  margin: 0 auto;
+  padding: auto;
+  width: 80%;
+  height: 90vh;
+  border: 1px solid black;
+  background-color: white;
+}
+
+</style>
+  <body>
+    <div class="konten">
+    <label for="gambar">Pilih gambar yang akan ditampilkan :</label>
+    <select id="gambar">
+      <option value="">--Silahkan Dipilih--</option>
+      <option value="Nanda">Nanda</option>
+      <option value="Rozi">Rozi</option>
+      <option value="Firza">Firza</option>
+      <option value="Haykal">Haykal</option>
+      <option value="Irza">Irza</option>
+      <option value="Dermawan">Dermawan</option>
+      <option value="Taufiqul">Taufiqul</option>
+    </select>
+  </div>
+  <br>
+    <div id="berubah">
+
+    </div>
+    <script>
+      const select = document.querySelector('select');
+      const para = document.querySelector('div');
+
+      select.onchange = setPicture;
+
+      function setPicture() {
+        const choice = select.value;
+
+        switch(choice) {
+          case 'Nanda':
+          document.getElementById("berubah").style.backgroundImage = "url('images/nanda.gif')";
+            break;
+          case 'Rozi':
+          document.getElementById("berubah").style.backgroundImage = "url('images/rozi.gif')";
+            break;
+          case 'Firza':
+          document.getElementById("berubah").style.backgroundImage = "url('images/firza_1.gif')";
+            break;
+          case 'Haykal':
+          document.getElementById("berubah").style.backgroundImage = "url('images/haykal.gif')";
+            break;
+          case 'Irza':
+          document.getElementById("berubah").style.backgroundImage = "url('images/irza.gif')";
+            break;
+          case 'Dermawan':
+          document.getElementById("berubah").style.backgroundImage = "url('images/dermawan.gif')";
+            break;
+          case 'Taufiqul':
+          document.getElementById("berubah").style.backgroundImage = "url('images/taufiq.gif')";  
+            break;
+          default:
+          document.getElementById("berubah").style.backgroundImage = "url('images/taufiq.gif')";  
+        }
+      }
+    </script>
+  </body>
+</html>

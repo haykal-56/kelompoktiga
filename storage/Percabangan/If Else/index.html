@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../../images/monster.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>IF ELSE</title>
+  </head>
+<style>
+*{
+  font-family: 'Roboto', sans-serif;
+}
+
+body{
+  background-color: #D8FFDD;
+}
+
+</style>
+  <body id="berubah">
+    <label for="warna">Pilih warna yang akan merubah latar belakang :  </label>
+    <select id="warna">
+      <option value="">--Silahkan dipilih--</option>
+      <option value="Merah">Merah</option>
+      <option value="Hijau">Hijau</option>
+      <option value="Biru">Biru</option>
+      <option value="Kuning">Kuning</option>
+    </select>
+    <script>
+      const select = document.querySelector('select');
+      const para = document.querySelector('body');
+
+      select.onchange = setColor;
+
+      function setColor() {
+        const choice = select.value;
+
+        if(choice === 'Merah') {
+          document.getElementById("berubah").style.backgroundColor = '#ff0000'
+        } else if(choice === 'Hijau') {
+          document.getElementById("berubah").style.backgroundColor = '#008000'
+        } else if(choice === 'Biru') {
+          document.getElementById("berubah").style.backgroundColor = '#0000ff'
+        } else if(choice === 'Kuning') {
+          document.getElementById("berubah").style.backgroundColor = '#ffff00'
+        } else {
+          document.getElementById("berubah").style.backgroundColor = '#D8FFDD'
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<html>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../images/monster.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <head>
+        <title>Objek - Objek</title>
+    </head>
+    <link rel="stylesheet" href="style.css">
+    <body>
+    <script languange ="JavaScript">
+        //<!--
+        function tekan(){
+            var namastr = (document.fform.nama.value);
+            var emailstr = (document.fform.email.value);
+            var jurusanstr = (document.fform.jurusan.value);
+            var keteranganstr = (document.fform.keterangan.value);
+
+            document.fform.oketerangan.value = keteranganstr;
+            document.fform.onama.value = namastr;
+            document.fform.oemail.value = emailstr;
+            document.fform.ojurusan.value = jurusanstr;
+            
+            if(document.getElementById('Laki-Laki').checked) { 
+                document.getElementById("tampilan").innerHTML 
+                    = document.getElementById("Laki-Laki").value 
+                    + " gender Anda "; 
+            }
+            else if (document.getElementById('Perempuan').checked) {
+                document.getElementById("tampilan").innerHTML
+                    = document.getElementById("Perempuan").value
+                    + " gender Anda "; 
+            }
+            else{
+                document.getElementById("error").innerHTML
+                = "Harap memilih gender"
+            }
+        }
+        //-->
+    </script>
+    <form name ="fform">
+        <h1>Form</h1>
+        <fieldset>
+            <label>Nama Anda : <input type="text" size="11" name="nama"></label>
+            <label>E-mail :  <input type="text" size="25" name="email"></label>
+        </fieldset>
+        <label>Pilih Agama
+            <select name="jurusan">
+                <option value="">(Pilih salah satu)</option>
+                <option value="Islam">Islam</option>
+                <option value="Kristen">Kristen</option>
+                <option value="Buddha">Buddha</option>
+                <option value="Hindu">Hindu</option>
+                <option value="Tidak Menjawab">Tidak Menjawab</option>
+            </select>
+        </label>
+        <fieldset>
+            <label><input type="radio" id="Laki-Laki" class="segaris" name="gender" value="Laki-laki">Laki-laki</label>
+            <label><input type="radio" id="Perempuan" class="segaris" name="gender" value="Perempuan">Perempuan</label>
+            <br>
+            <label>Ketikkan tentang anda
+                <textarea name="keterangan" id="" cols="30" rows="3" placeholder="Saya suka kuliah di universitas potensi utama"></textarea>
+            </label>        
+        </fieldset>
+        <fieldset>
+            <input type="button" value="kirim" onclick="tekan()">
+            <input type="reset" value="ulang">
+        </fieldset>
+        <fieldset>
+            <h1 style="text-align: left;">Hasil</h1>
+            <label>Jadi nama Anda adalah : <input type="text" size="11" name="onama"></label>
+            <label>E-mail Anda adalah : <input type="text" size="25" name="oemail"></label>
+            <label>Agama Anda adalah : <input type="text" size="25" name="ojurusan"></label>
+            <label>Keterangan : <input type="text" size="25" name="oketerangan"></label>
+            <h1 id="tampilan" style="color: black;"></h1>
+            <h3 id="error" style="color: red;"></h3>
+        </fieldset>
+    </form>
+    </body>
+</html>
